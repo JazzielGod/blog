@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
+use App\Models\Post;
 
 Route::get('/example', function () {
     return view('welcome');
@@ -12,6 +13,40 @@ Route::get('/', HomeController::class);
 Route::get('/post', [PostController::class, 'index']);
 Route::get('/post/create', [PostController::class, 'create']);  
 Route::get('/post/{post}', [PostController::class, 'show']);
+
+Route::get('prueba',  function () {
+    
+    //crear nuevo post
+    /*$post = new Post;
+    $post->title = 'titulo de prueba 3';
+    $post->content = 'contenido de prueba 3';
+    $post->category = 'categoria de prueba 3';
+    $post->save();
+    return $post;¨*/
+
+    // $post = Post::find(1);
+
+    /*$post = Post::where('title', 'titulo de prueba 1')->first();
+    $post->category = 'desarrollo web';
+    $post->save();
+
+    return $post;*/
+
+    //listar todos los post
+    /*$posts = Post::orderBy('category', 'asc')
+                ->select('id', 'title', 'category')
+                ->take(2)
+                ->get();
+
+    return $posts;*/
+
+    //eliminar post
+    $post = Post::find(1);
+    $post->delete();
+
+    return "Post eliminado";
+
+});
 
 
 

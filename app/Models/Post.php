@@ -12,6 +12,18 @@ class Post extends Model
 
     protected $table = 'posts';
 
+    // protected $casts = [ //forma de castear los datos antigua
+    //     'published_at' => 'datetime',
+    //     'is_active' => 'boolean',
+    // ];
+
+    protected function casts (): array
+    {
+        return [
+            'published_at' => 'datetime',
+            'is_active' => 'boolean',
+        ];
+    }
     protected function title(): Attribute
     {
         return Attribute::make(

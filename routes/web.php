@@ -25,9 +25,6 @@ Route::get('prueba',  function () {
     
     return $post;*/
 
-    $post = Post::find(4);
-    return $post;
-
     /*$post = Post::where('title', 'titulo de prueba 1')->first();
     $post->category = 'desarrollo web';
     $post->save();
@@ -47,6 +44,11 @@ Route::get('prueba',  function () {
     // $post->delete();
 
     // return "Post eliminado";
+
+    $post = Post::find(1);
+
+    dd($post->is_active);
+    return $post->is_active;
 
 });
 

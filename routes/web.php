@@ -18,13 +18,15 @@ Route::get('prueba',  function () {
     
     //crear nuevo post
     /*$post = new Post;
-    $post->title = 'titulo de prueba 3';
-    $post->content = 'contenido de prueba 3';
-    $post->category = 'categoria de prueba 3';
+    $post->title = 'tituLO de PrueBA 4';
+    $post->content = 'contenido de prueba 4';
+    $post->category = 'categoria de prueba 4';
     $post->save();
-    return $post;¨*/
+    
+    return $post;*/
 
-    // $post = Post::find(1);
+    $post = Post::find(4);
+    return $post;
 
     /*$post = Post::where('title', 'titulo de prueba 1')->first();
     $post->category = 'desarrollo web';
@@ -41,10 +43,10 @@ Route::get('prueba',  function () {
     return $posts;*/
 
     //eliminar post
-    $post = Post::find(1);
-    $post->delete();
+    // $post = Post::find(1);
+    // $post->delete();
 
-    return "Post eliminado";
+    // return "Post eliminado";
 
 });
 

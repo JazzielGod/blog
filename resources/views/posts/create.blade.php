@@ -1,7 +1,7 @@
 <x-app-layout>
     <h1>Aqui se mostrara un formulario para crear un nuevo post</h1>
 
-    <form action="/posts" method="POST">
+    <form action="{{ route('posts.store') }}" method="POST">
 
         @csrf
 

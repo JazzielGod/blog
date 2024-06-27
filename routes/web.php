@@ -11,7 +11,7 @@ Route::get('/example', function () {
 
 Route::get('/', HomeController::class);
 
-Route::get('/posts', [PostController::class, 'index'])
+/*Route::get('/posts', [PostController::class, 'index'])
         ->name('posts.index');
 
 Route::get('/posts/create', [PostController::class, 'create'])
@@ -30,8 +30,15 @@ Route::put('/posts/{post}', [PostController::class, 'update'])
         ->name('posts.update');
 
 Route::delete('/posts/{post}', [PostController::class, 'destroy'])
-        ->name('posts.destroy');
+        ->name('posts.destroy');*/
 
+// Route::resource('articulos', PostController::class)
+//         ->parameters(['articulos' => 'post'])
+//         ->names('posts');
+
+//Route::apiResource('posts', PostController::class);
+
+Route::resource('posts', PostController::class);
 
 Route::get('prueba',  function () {
     

@@ -10,9 +10,21 @@ Route::get('/example', function () {
 });
 
 Route::get('/', HomeController::class);
-Route::get('/post', [PostController::class, 'index']);
-Route::get('/post/create', [PostController::class, 'create']);  
-Route::get('/post/{post}', [PostController::class, 'show']);
+
+Route::get('/posts', [PostController::class, 'index']);
+
+Route::get('/posts/create', [PostController::class, 'create']);  
+
+Route::post('/posts', [PostController::class, 'store']);
+
+Route::get('/posts/{post}', [PostController::class, 'show']);
+
+Route::get('/posts/{post}/edit', [PostController::class, 'edit']);
+
+Route::put('/posts/{post}', [PostController::class, 'update']);
+
+Route::delete('/posts/{post}', [PostController::class, 'destroy']);
+
 
 Route::get('prueba',  function () {
     
@@ -45,13 +57,12 @@ Route::get('prueba',  function () {
 
     // return "Post eliminado";
 
-    $post = Post::find(1);
+    // $post = Post::find(1);
 
-    dd($post->is_active);
-    return $post->is_active;
+    // dd($post->is_active);
+    // return $post->is_active;
 
 });
-
 
 
 /*

@@ -42,18 +42,18 @@ class StorePostRequest extends FormRequest
     //     ];
     // }
 
-    public function messages()
-    {
-        return [
-            'title.required' => 'The :attribute field is required. (edit)',
-        ];
-    }
+    // public function messages()
+    // {
+    //     return [
+    //         'title.required' => 'The :attribute field is required. (edit)',
+    //     ];
+    // }
 
-    public function attributes(): array
-    {
-        return [
-            'title' => 'name'
-        ];
-    }
+    // public function attributes(): array
+    // {
+    //     return [
+    //         'title' => 'name'
+    //     ];
+    // }
 
 }

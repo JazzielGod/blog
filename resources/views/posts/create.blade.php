@@ -1,6 +1,8 @@
 <x-app-layout>
     <h1>Aqui se mostrara un formulario para crear un nuevo post</h1>
 
+    {{-- {{ __('Reset Content') }} --}}
+
     @if ($errors->any())
         <div>
             <h2>Errores</h2>

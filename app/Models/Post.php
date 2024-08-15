@@ -12,6 +12,17 @@ class Post extends Model
 
     protected $table = 'posts';
 
+    // protected $fillable = [
+    //     'title',
+    //     'slug',
+    //     'category',
+    //     'content',
+    // ];
+
+    protected $guarded = [
+        'is_active',
+    ];
+
     // protected $casts = [ //forma de castear los datos antigua
     //     'published_at' => 'datetime',
     //     'is_active' => 'boolean',

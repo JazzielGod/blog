@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePostRequest;
+use App\Mail\PostCreatedMail;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\Mail;
 
 class PostController extends Controller
 {
@@ -33,7 +35,9 @@ class PostController extends Controller
         //     'title' => 'name'
         // ]);
 
-        Post::create($request->all());
+        $post = Post::create($request->all());
+
+        Mail::to('prueba@prueba.com')->send(new PostCreatedMail($post));
         // $post = new Post;
         // $post->title = $request->title;
         // $post->slug = $request->slug;

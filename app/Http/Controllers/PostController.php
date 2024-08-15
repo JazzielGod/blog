@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Http\Requests\StorePostRequest;
 use Illuminate\Http\Request;
 use App\Models\Post;
 
@@ -18,14 +20,18 @@ class PostController extends Controller
         return view('posts.create');
     }
 
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
-        $request->validate([
-            'title' => ['required','min:5','max:255'],
-            'slug' => 'required|unique:posts',
-            'category' => 'required',
-            'content' => 'required',
-        ]);
+        // $request->validate([
+        //     'title' => ['required','min:5','max:255'],
+        //     'slug' => 'required|unique:posts',
+        //     'category' => 'required',
+        //     'content' => 'required',
+        // ],[
+        //     'title.required' => 'The :attribute field is required. (store)',
+        // ],[
+        //     'title' => 'name'
+        // ]);
 
         Post::create($request->all());
         // $post = new Post;

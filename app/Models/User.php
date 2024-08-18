@@ -44,4 +44,15 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    //siguiendo las convenciones
+    public function phone()
+    {
+        return $this->hasOne(Phone::class);
+    }
+    //sin seguir las convenciones
+    // public function phone()
+    // {
+    //     return $this->hasOne(Phone::class, 'user_id', 'id');
+    // }
 }

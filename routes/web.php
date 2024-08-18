@@ -3,13 +3,21 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
+use App\Models\Phone;
 use App\Models\Post;
+use App\Models\User;
 
 Route::get('/example', function () {
     return view('welcome');
 });
 
 Route::get('/', HomeController::class);
+
+Route::get('pruebas', function () {
+   $phone = Phone::find(1);
+   
+   return $phone->user;
+});
 
 /*Route::get('/posts', [PostController::class, 'index'])
         ->name('posts.index');

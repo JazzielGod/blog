@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
+use App\Models\Comment;
 use App\Models\Phone;
 use App\Models\Post;
 use App\Models\User;
@@ -17,6 +18,15 @@ Route::get('pruebas', function () {
    $phone = Phone::find(1);
    
    return $phone->user;
+});
+
+Route::get('pruebas-many', function () {
+      $post = Post::find(2);
+        $post->comments()->create([
+        'content' => 'Este es un comentario de prueba'        
+      ]);
+
+        return "Comentario creado";
 });
 
 /*Route::get('/posts', [PostController::class, 'index'])

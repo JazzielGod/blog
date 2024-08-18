@@ -12,6 +12,11 @@ class Post extends Model
 
     protected $table = 'posts';
 
+    protected $fillable = [
+        'title',
+        'content'
+    ];
+
     // protected $fillable = [
     //     'title',
     //     'slug',
@@ -19,9 +24,9 @@ class Post extends Model
     //     'content',
     // ];
 
-    protected $guarded = [
-        'is_active',
-    ];
+    // protected $guarded = [
+    //     'is_active',
+    // ];
 
     // protected $casts = [ //forma de castear los datos antigua
     //     'published_at' => 'datetime',
@@ -50,6 +55,10 @@ class Post extends Model
     public function getRouteKeyName()
     {
         return 'slug';
+    }
+
+    public function comments(){
+        return $this->hasMany(Comment::class);
     }
 
 }
